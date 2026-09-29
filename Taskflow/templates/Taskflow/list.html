@@ -1,0 +1,7 @@
+{% for tache in taches %}
+    <p>{{ tache.type_tache }}</p>
+    <p>{{ tache.description }}</p>
+    <p>{{ tache.date }}</p>
+{% endfor %}
+
+<a href="{% url 'creer_tache' %}">creer tache</a>

@@ -1,0 +1,6 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Créer</button>
+</form>
+<a href="{% url 'liste_taches' %}">retour à la liste</a>
