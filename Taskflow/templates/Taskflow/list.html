@@ -1,7 +1,25 @@
-{% for tache in taches %}
-    <p>{{ tache.type_tache }}</p>
-    <p>{{ tache.description }}</p>
-    <p>{{ tache.date }}</p>
-{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskFlow — Mes tâches</title>
+    <link rel="stylesheet" href="{% static 'Taskflow/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>TaskFlow</h1>
+        <a class="btn-add" href="{% url 'creer_tache' %}">+ Créer une tâche</a>
 
-<a href="{% url 'creer_tache' %}">creer tache</a>
+        <div class="taches-list">
+            {% for tache in taches %}
+                <div class="tache-card">
+                    <h3>{{ tache.type_tache }}</h3>
+                    <p>{{ tache.description }}</p>
+                    <span class="date">{{ tache.date }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

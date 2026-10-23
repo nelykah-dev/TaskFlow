@@ -1,6 +1,20 @@
-<form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Créer</button>
-</form>
-<a href="{% url 'liste_taches' %}">retour à la liste</a>
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskFlow — Nouvelle tâche</title>
+    <link rel="stylesheet" href="{% static 'Taskflow/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Créer une tâche</h1>
+        <form method="post" class="tache-form">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Créer</button>
+        </form>
+        <a class="btn-back" href="{% url 'liste_taches' %}">← Retour à la liste</a>
+    </div>
+</body>
+</html>

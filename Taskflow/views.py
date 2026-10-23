@@ -15,4 +15,4 @@ def creer_tache(request):
             return redirect('liste_taches')
     else:
         form = TachesForm()
-    return render(request, 'Taskflow/list.html', {'form': form})
+    return render(request, 'Taskflow/creer_tache.html', {'form': form})
